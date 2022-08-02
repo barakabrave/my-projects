@@ -3,7 +3,8 @@
 
 # In[2]:
 
-pip install sklearn
+!pip install sklearn
+
 import pandas as pd
 import sklearn
 import numpy as np
