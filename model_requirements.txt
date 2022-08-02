@@ -1,0 +1,7 @@
+Making Requirements.txt
+
+
+pandas
+streamlit
+numpy
+pickle
