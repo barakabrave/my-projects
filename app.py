@@ -2,8 +2,8 @@
 # coding: utf-8
 
 # In[2]:
-!pip install streamlit
-!pip install sklearn
+pip install streamlit
+pip install sklearn
 
 import pandas as pd
 import numpy as np
