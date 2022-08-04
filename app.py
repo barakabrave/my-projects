@@ -9,8 +9,7 @@ import numpy as np
 import pickle
 import streamlit as smt
 from PIL import Image
-#from sklearn import datasets
-  
+import sklearn  
 # loading in the model to predict on the data
 pickle_in = open('model.pkl', 'rb')
 model = pickle.load(pickle_in)
