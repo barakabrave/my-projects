@@ -2,8 +2,6 @@
 # coding: utf-8
 
 # In[2]:
-
-import sklearn
 import pandas as pd
 import sklearn
 import numpy as np
