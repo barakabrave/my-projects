@@ -2,17 +2,19 @@
 # coding: utf-8
 
 # In[2]:
+
+
 import pandas as pd
 import numpy as np
 import pickle
 import streamlit as smt
-import sklearn
 from PIL import Image
+from sklearn import datasets
   
 # loading in the model to predict on the data
 pickle_in = open('model.pkl', 'rb')
 model = pickle.load(pickle_in)
-  
+#model=pd.read_csv("C:\Users\BRAVE BARAKA\Breast cancer prediction\data.csv")
 def welcome():
     return 'welcome all'
   
@@ -44,18 +46,23 @@ def main():
       
     # the following lines create text boxes in which the user can enter 
     # the data required to make the prediction
-    radius_mean = smt.text_input ("radius_mean ", " Type Here")  
-    texture_mean = smt.text_input ("texture_mean ", " Type Here")  
-    perimeter_mean = smt.text_input ("perimeter_mean ", " Type Here")
-    
+    radius_mean = smt.number_input ("radius_mean") 
+    texture_mean = smt.number_input ("texture_mean")
+    perimeter_mean = smt.number_input ("perimeter_mean")
+    X = pd.DataFrame([[radius_mean, texture_mean, perimeter_mean]], 
+                     columns = ["radius_mean", "texture_mean", "perimeter_mean"])
     result =""
       
     # the below line ensures that when the button called 'Predict' is clicked, 
     # the prediction function defined above is called to make the prediction 
     # and store it in the variable result
     if smt.button("Predict"):
-        result = prediction(radius_mean, texture_mean, perimeter_mean)
-    smt.success('The output is {}'.format(result))
+        prediction = model.predict(X)[0]
+        #smt.success('The output is {}'.format(result))
+     # Output prediction
+        #X = X.replace(["M", "B"], [1, 0])
+        smt.text(f"This instance is a {prediction}")
+        print(X)
      
 if __name__=='__main__':
     main()
