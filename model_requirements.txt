@@ -5,5 +5,5 @@ pandas
 streamlit
 numpy
 pickle
-sklearn
+scikit-learn
 joblib
