@@ -3,7 +3,6 @@
 
 # In[2]:
 import pandas as pd
-import sklearn
 import numpy as np
 import pickle
 import streamlit as smt
